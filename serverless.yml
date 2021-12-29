@@ -1,0 +1,19 @@
+service: aws-java-simple-http-endpoint
+frameworkVersion: '2'
+
+provider:
+  name: aws
+  runtime: java8
+
+package:
+  artifact: target/aws-java-simple-http-endpoint.jar
+
+functions:
+  simplehandler:
+    handler: com.serverless.Handler
+    events:
+        - http:
+            method: GET
+            path: /simple
+
+    
